@@ -38,3 +38,8 @@ footer {
 	letter-spacing: 2px;
 	padding: 20px 5px 10px 5px;
 }
+a:hover {
+	color: #66CCE1;
+	text-decoration: none;
+	font-weight: bold;
+}

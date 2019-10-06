@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="es">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- autor y descripción de la página -->
+    <meta name="author" content="Andrés F. Ruiz B.">
+    <meta name="description" content="Manual sobre la creación de bases de datos con MySQL. Se tratan los principales comandos para manipular una base de datos">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- personal CSS -->
+    <link rel="stylesheet" href="index.css">
+    <!-- icono de pestaña -->
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <!-- título de la página -->
+    <title>Manual MySQL: 1 - Creación de una base de datos</title>
+  </head>
+
+  <body>
+    <!-- inicio cabecera del documento -->
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark px-4">
+        <a class="navbar-brand" href="#">
+          <img src="anferubu.png" width="50" height="50" alt="anferubu nation logo">
+        </a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-4">
+              <a class="nav-link" href="#">contenido</a>
+            </li>
+            <li class="nav-item mx-4">
+              <a class="nav-link" href="#">sobre mí</a>
+            </li>
+            <li class="nav-item mx-4">
+              <a class="nav-link" href="#">otros manuales</a>
+            </li>  
+          </ul>  
+        </div>
+      </nav>
+    </header>
+    <!-- fin cabecera del documento -->
+
+    <!-- inicio cuerpo principal del documento -->
+    <main class="container">
+      <div class="row">
+        <!-- inicio sección principal del documento -->
+        <div class="col-md-8">
+          <section>
+            <h1>Creación de una base de datos</h1>
+            <time datetime="2019-10-05">05 de octubre, 2019</time>
+            <!-- inicio manual -->
+            <h2 id="crear_nueva_bd">1. Crear una nueva base de datos</h2>
+            <div class="code">
+              <code>
+                CREATE {DATABASE | SCHEMA} <i>[IF NO EXISTS]</i> <var>databaseName</var> <i>[[DEFAULT] CHARACTER SET</i> <var>charSet</var> <i>[DEFAULT] COLLATE</i> <var>collation</var><i>]</i>
+              </code>
+            </div>
+            <button class="btn btn-exp" type="button" data-toggle="collapse" data-target="#collapse">+ notas explicatorias</button>
+            <div class="collapse" id="collapse">
+                <div class="card card-body">
+                    <dl>
+                        <dt> [DEFAULT] CHARACTER SET <i>charset</i> </dt>
+                        <dd> conjunto de caracteres y símbolos que se pueden emplear en la base de datos. </dd>
+                        <dt> [DEFAULT] COLLATE <i>collation</i> </dt>
+                        <dd> conjunto de reglas (colación) para comparar caracteres, útil para definir cómo ordenar registros. </dd>
+                     </dl>
+                </div>
+            </div>
+            <br><br><br>
+            <p>El comando <code>CREATE DATABASE</code> permite crear una base de datos vacía en el servidor MySQL. Sin embargo, no sitúa al gestor sobre la nueva base de datos. Sepa que en este caso <code>DATABASE</code> y <code>SCHEMA</code> funcionan como sinónimos. </p>
+
+            <pre>
+mysql><code> CREATE DATABASE liberia;</code>
+      Query OK, 1 row affected (0.19 sec)</pre>
+            <p class="explain">Se crea la base de datos librería. Como no se indicó cuál charset y collation utilizar, la base de datos usará aquellos que el servidor tenga por defecto.</p>
+
+            <h3>1.1. Conjunto de caracteres y colación</h3>
+            <p>Al crear una base de datos, se puede especificar la forma en que se guardan los datos (conjunto de símbolos y codificaciones) y las reglas para comparar dichos datos (colación).</p>
+
+            <p>Por ejemplo, un conjunto de letras a las cuales se les ha asignado un código numérico (A=1, B=2, C=3, ...) consisten en un <var>charSet</var>. Mientras que una <var>collation</var> consiste en un conjunto de reglas para comparar dichos símbolos y sus códigos, por ejemplo, tratar a mayúsculas y minúsculas como equivalentes.</p>
+
+            <div class="nota">
+              <h4>El problema con el charset utf8</h4>
+              <p>La codificación <strong>utf8</strong> usada en MySQL solo admite 3 bytes por carácter. En cambio, la codificación <strong>utf8</strong> real, admite hasta 4 bytes por carácter. Este error nunca se corrigió. En vez de eso, decidieron crear una nueva codificación <strong>utf8mb4</strong>, la cual corresponde a la <strong>utf8</strong> usada por el resto del mundo. Por esto, se recomienda siempre usar <strong>utf8mb4</strong>.</p>
+            </div>
+
+
+            <h3>1.1.1. CharSet y Collation disponibles en el servidor</h3>
+            <p>Para ver los conjuntos de caracteres disponibles en el servidor MySQL, se ejecuta el comando <code>SHOW CHARACTER SET</code>. Cada conjunto de caracteres tiene una o más colaciones, las cuales se pueden visualizar con el comando <code>SHOW COLLATION LIKE <var>'%charSetName%'</var></code>.</p>
+
+            <pre>
+mysql><code> SHOW CHARACTER SET;</code>
+      +----------+---------------------------------+---------------------+--------+
+      | Charset  | Description                     | Default collation   | Maxlen |
+      +----------+---------------------------------+---------------------+--------+
+      | armscii8 | ARMSCII-8 Armenian              | armscii8_general_ci |      1 |
+      | ascii    | US ASCII                        | ascii_general_ci    |      1 |
+      | big5     | Big5 Traditional Chinese        | big5_chinese_ci     |      2 |
+      | binary   | Binary pseudo charset           | binary              |      1 |
+      | cp1250   | Windows Central European        | cp1250_general_ci   |      1 |
+      | cp1251   | Windows Cyrillic                | cp1251_general_ci   |      1 |
+      | cp1256   | Windows Arabic                  | cp1256_general_ci   |      1 |
+      | cp1257   | Windows Baltic                  | cp1257_general_ci   |      1 |
+      | cp850    | DOS West European               | cp850_general_ci    |      1 |
+      | cp852    | DOS Central European            | cp852_general_ci    |      1 |
+      | cp866    | DOS Russian                     | cp866_general_ci    |      1 |
+      | cp932    | SJIS for Windows Japanese       | cp932_japanese_ci   |      2 |
+      | dec8     | DEC West European               | dec8_swedish_ci     |      1 |
+      | eucjpms  | UJIS for Windows Japanese       | eucjpms_japanese_ci |      3 |
+      | euckr    | EUC-KR Korean                   | euckr_korean_ci     |      2 |
+      | gb18030  | China National Standard GB18030 | gb18030_chinese_ci  |      4 |
+      | gb2312   | GB2312 Simplified Chinese       | gb2312_chinese_ci   |      2 |
+      | gbk      | GBK Simplified Chinese          | gbk_chinese_ci      |      2 |
+      | geostd8  | GEOSTD8 Georgian                | geostd8_general_ci  |      1 |
+      | greek    | ISO 8859-7 Greek                | greek_general_ci    |      1 |
+      | hebrew   | ISO 8859-8 Hebrew               | hebrew_general_ci   |      1 |
+      | hp8      | HP West European                | hp8_english_ci      |      1 |
+      | keybcs2  | DOS Kamenicky Czech-Slovak      | keybcs2_general_ci  |      1 |
+      | koi8r    | KOI8-R Relcom Russian           | koi8r_general_ci    |      1 |
+      | koi8u    | KOI8-U Ukrainian                | koi8u_general_ci    |      1 |
+      | latin1   | cp1252 West European            | latin1_swedish_ci   |      1 |
+      | latin2   | ISO 8859-2 Central European     | latin2_general_ci   |      1 |
+      | latin5   | ISO 8859-9 Turkish              | latin5_turkish_ci   |      1 |
+      | latin7   | ISO 8859-13 Baltic              | latin7_general_ci   |      1 |
+      | macce    | Mac Central European            | macce_general_ci    |      1 |
+      | macroman | Mac West European               | macroman_general_ci |      1 |
+      | sjis     | Shift-JIS Japanese              | sjis_japanese_ci    |      2 |
+      | swe7     | 7bit Swedish                    | swe7_swedish_ci     |      1 |
+      | tis620   | TIS620 Thai                     | tis620_thai_ci      |      1 |
+      | ucs2     | UCS-2 Unicode                   | ucs2_general_ci     |      2 |
+      | ujis     | EUC-JP Japanese                 | ujis_japanese_ci    |      3 |
+      | utf16    | UTF-16 Unicode                  | utf16_general_ci    |      4 |
+      | utf16le  | UTF-16LE Unicode                | utf16le_general_ci  |      4 |
+      | utf32    | UTF-32 Unicode                  | utf32_general_ci    |      4 |
+      | utf8     | UTF-8 Unicode                   | utf8_general_ci     |      3 |
+      | utf8mb4  | UTF-8 Unicode                   | utf8mb4_0900_ai_ci  |      4 |
+      +----------+---------------------------------+---------------------+--------+
+      41 rows in set (0.08 sec)
+
+mysql><code> SHOW COLLATION LIKE '%latin1%';</code>
+      +-------------------+---------+----+---------+----------+---------+---------------+
+      | Collation         | Charset | Id | Default | Compiled | Sortlen | Pad_attribute |
+      +-------------------+---------+----+---------+----------+---------+---------------+
+      | latin1_bin        | latin1  | 47 |         | Yes      |       1 | PAD SPACE     |
+      | latin1_danish_ci  | latin1  | 15 |         | Yes      |       1 | PAD SPACE     |
+      | latin1_general_ci | latin1  | 48 |         | Yes      |       1 | PAD SPACE     |
+      | latin1_general_cs | latin1  | 49 |         | Yes      |       1 | PAD SPACE     |
+      | latin1_german1_ci | latin1  |  5 |         | Yes      |       1 | PAD SPACE     |
+      | latin1_german2_ci | latin1  | 31 |         | Yes      |       2 | PAD SPACE     |
+      | latin1_spanish_ci | latin1  | 94 |         | Yes      |       1 | PAD SPACE     |
+      | latin1_swedish_ci | latin1  |  8 | Yes     | Yes      |       1 | PAD SPACE     |
+      +-------------------+---------+----+---------+----------+---------+---------------+
+      8 rows in set (0.00 sec)</pre>
+            <p class="explain">Se muestran todos los charset disponibles con sus colaciones por defecto. Note que el que charset utf8 solo acepta caracteres de máximo 3 bytes, en cambio, utf8mb4 acepta caracteres de hasta 4 bytes. Luego se muestra las colaciones disponibles para el charset 'latin1'.</p>
+
+
+            <h3>1.1.2. CharSet y Collation por defecto del servidor</h3>
+            <p>También es posible saber cuál es el conjunto de caracteres que el servidor usa por defecto, para esto se escribe <code>SHOW VARIABLES LIKE 'character_set_server'</code>. Mientras que para conocer la colación utilizada por defecto, se escribe <code>SHOW VARIABLES LIKE 'collation_server'</code>.</p>
+
+            <pre>
+mysql><code> SHOW VARIABLES LIKE 'character_set_server';</code>
+      +----------------------+---------+
+      | Variable_name        | Value   |
+      +----------------------+---------+
+      | character_set_server | utf8mb4 |
+      +----------------------+---------+
+      1 row in set, 1 warning (0.57 sec)
+
+mysql><code> SHOW VARIABLES LIKE 'collation_server';</code>
+      +------------------+--------------------+
+      | Variable_name    | Value              |
+      +------------------+--------------------+
+      | collation_server | utf8mb4_0900_ai_ci |
+      +------------------+--------------------+
+      1 row in set, 1 warning (0.01 sec)</pre>
+            <p class="explain">Se muestra el charset y la colación que el servidor MySQL utiliza por defecto. De esta manera, toda base de datos que se cree, si no se especifica un charset y colación, manejará utf8mb4 y su colación por defecto.</p>
+
+
+            <h3>1.1.3. CharSet y Collation de una base de datos</h3>
+            <p>La tabla <var>schemata</var> de la base de datos <var>information_schema</var> almacena la información referente al <var>charset</var> y <var>collation</var> de cada base de datos existente en el servidor. Así que es posible con una sencilla consulta, conocer el conjunto de caracteres y colación utilizada por una base de datos en específico.</p>
+
+            <pre>
+mysql><code> SELECT schema_name AS `database`, 
+       default_character_set_name AS `charset`, 
+       default_collation_name AS `collation` 
+       FROM information_schema.schemata 
+       WHERE schema_name='libreria';</code>
+      +----------+---------+--------------------+
+      | database | charset | collation          |
+      +----------+---------+--------------------+
+      | libreria | utf8mb4 | utf8mb4_0900_ai_ci |
+      +----------+---------+--------------------+
+      1 row in set (0.02 sec)</pre>
+            <p class="explain">Se muestra el charset y colación utilizados por la base de datos libreria.</p>
+
+            <p>Por otro lado, las variables <var>character_set_database</var> y <var>collation_database</var> indican el conjunto de caracteres y la colación utilizados por la base de datos activa. Recordar que para conocer el valor de una variables se utiliza el comando <code>SHOW VARIABLES LIKE <var>'variableName'</var></code>.</p>
+
+            <pre>
+mysql><code> SHOW VARIABLES LIKE 'character_set_database';</code>
+      +------------------------+---------+
+      | Variable_name          | Value   |
+      +------------------------+---------+
+      | character_set_database | utf8mb4 |
+      +------------------------+---------+
+      1 row in set, 1 warning (0.01 sec)
+
+mysql><code> SHOW VARIABLES LIKE 'collation_database';</code>
+      +--------------------+--------------------+
+      | Variable_name      | Value              |
+      +--------------------+--------------------+
+      | collation_database | utf8mb4_0900_ai_ci |
+      +--------------------+--------------------+
+      1 row in set, 1 warning (0.00 sec)</pre>
+            <p class="explain">La base de datos activa está trabajando con el charset utf9mb4 y su correspondiente colación.</p>
+
+            <h3>1.1.4. Modificar la definición de una base de datos</h3>
+            <p>Después de creada una base de datos, es posible modificar el conjunto de caracteres y la colación utilizada. Para esto se debe ejecutar el comando <code>ALTER {DATABASE|SCHEMA} <var>databaseName</var> <i>[[DEFAULT] CHARACTER SET</i> <var>charSet</var> <i>[DEFAULT] COLLATE</i> <var>collation</var><i>]</i></code></p>
+
+            <pre>
+mysql><code> ALTER DATABASE libreria 
+       DEFAULT CHARACTER SET 'latin1' 
+       DEFAULT COLLATE 'latin1_spanish_ci';</code>
+      Query OK, 1 row affected (0.28 sec)
+
+mysql><code> SELECT schema_name AS `database`, 
+       default_character_set_name AS `charset`, 
+       default_collation_name AS `collation` 
+       FROM information_schema.schemata 
+       WHERE schema_name='libreria';</code>
+      +----------+---------+-------------------+
+      | database | charset | collation         |
+      +----------+---------+-------------------+
+      | libreria | latin1  | latin1_spanish_ci |
+      +----------+---------+-------------------+
+      1 row in set (0.00 sec)</pre>
+            <p class="explain">Se modifica el charset y la colación de la base de datos libreria. Si volvemos a consultar la información de la tabla schemata de la base de datos information_schema, verá que la información referente al charset y colación de la base de datos libreria ha cambiado.</p>
+
+            <h2>2. Comenzar a trabajar sobre una base de datos</h2>
+            <p>Para ver las bases de datos existentes en el servidor, se ejecuta el comando <code>SHOW DATABASES</code>. Y para determinar qué base de datos se utilizará, se escribe el comando <code>USE <var>databaseName</var></code>. De esta manera, todos los comandos ejecutados posteriormente afectarán a dicha base de datos. Además, para saber cuál es la base de datos activa, se puede utilizar la función <code>DATABASE()</code>.</p>
+
+            <pre>
+mysql><code> SHOW DATABASES;</code>
+      +--------------------+
+      | Database           |
+      +--------------------+
+      | information_schema |
+      | libreria           |
+      | mysql              |
+      | performance_schema |
+      | sakila             |
+      | sys                |
+      | world              |
+      +--------------------+
+      9 rows in set (0.00 sec)
+
+mysql><code> USE libreria;</code>
+      Database changed
+
+mysql><code> SELECT DATABASE();</code>
+      +------------+
+      | DATABASE() |
+      +------------+
+      | libreria   |
+      +------------+
+      1 row in set (0.00 sec)</pre>
+            <p class="explain">Primero se listan todas las bases de datos existentes en el servidor MySQL, luego se indica que se comenzará a trabajar sobre la base de datos libreria, y por último, se utiliza la función DATABASE() para mostrar la base de datos activa.</p>
+
+            <p>También podemos ver cómo se creó una base de datos con el comando <code>SHOW CRATE DATABASE <var>databaseName</var></code>, el cual muestra las sentencias necesarias para replicar la base de datos señalada.</p>
+
+            <pre>
+mysql><code> SHOW CREATE DATABASE libreria;</code>
++----------+----------------------------------------------------------------------------------------------------------------------------------+
+| Database | Create Database                                                                                                                  |
++----------+----------------------------------------------------------------------------------------------------------------------------------+
+| libreria | CREATE DATABASE `libreria` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci */ /*!80016 DEFAULT ENCRYPTION='N' */ |
++----------+----------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.02 sec)</pre>
+            <p class="explain">Se muestra la sentencia necesaria para poder crear la base de datos libreria.</p>
+
+            <h2>5. Eliminar una base de datos</h2>
+            <p>El comando <code>DROP {DATABASE|SCHEMA} <i>[IF EXISTS]</i> <var>databaseName</var></code> elimina la base de datos señalada. Hay que tener cuidado con esta instrucción, ya que el comando no pide confirmación para eliminar y no se puede deshacer la acción.</p>
+
+            <pre>
+mysql><code> DROP DATABASE IF EXISTS libreria;</code>
+      Query OK, 0 rows affected (0.57 sec)</pre>
+            <p class="explain">Se elimina la base de datos libreria. La opción [IF EXISTS] evita lanzar un error (solo muestra una advertencia) en caso de que la base de datos indicada no exista. Se suele utilizar cuando se ejecutan conjuntos de comandos, para evitar que se interrumpa la ejecución de todo el conjunto.</p>
+
+            <br><br><br>
+            <h3>Compartir</h3>
+
+            
+
+            <div class="container-fluid mt-5">
+              <div class="row">
+                <div class="col text-left">
+                  <a href="#">&larr;&nbsp;&nbsp;&nbsp; anterior</a>
+                </div>
+                <div class="col text-right">
+                  <a href="#">siguiente &nbsp;&nbsp;&rarr;&nbsp;</a>
+                </div>
+              </div> 
+            </div>
+
+            <!-- fin manual -->
+          </section>  
+        </div> 
+        <!-- fin sección principal del documento -->             
+      </div>
+    </main>
+
+    <!--inicio pie de página del documento -->
+    <footer class="container-fluid">
+      <div class="row text-center">
+        <div class="col">
+          <span>2019 &copy; &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; anferubu &nbsp; nation</span>
+        </div>
+      </div>
+    </footer>
+    <!--fin pie de página del documento -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+  </body>
+</html>

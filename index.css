@@ -1,0 +1,220 @@
+* {
+	font-family: Karla, Helvética, Arial, sans-serif;	
+}
+::selection {
+	color: #FAFAFA;
+	background-color: #DCDCDC;
+}
+body {
+	background-color: #272822;
+}
+hr {
+	border: 1.5px solid rgba(255, 255, 255, 0.1);
+}
+header > nav {
+	box-shadow: 2.5px -2.5px 20px rgba(0, 0, 0, 0.5);
+	font-size: 19px;
+	margin-bottom: 50px;
+}
+p {
+	font-size: 20px;
+	line-height: 1.8;
+	color: #FAFAFA;
+	margin-bottom: 2rem;
+}
+h1, h2, h3 {
+	font-family: "Roboto", Helvética, Arial, sans-serif;
+	font-weight: bold;
+}
+h1 {
+	color: #FF6347;
+	font-size: 60px;	
+	font-variant: small-caps;
+	margin: 0 0 2em 0;
+}
+h2 {
+	color: #FAA23D;
+	font-size: 30px;
+	margin: 1.5em 0 1em 0;
+
+}
+h3 {
+	color: #FAA23D;
+	font-size: 25px;
+	margin-top: 4rem;
+}
+a:link {
+	color: #1E90FF;
+}
+a:visited {
+	color: #AA7DFC;
+}
+/* bloque de una sentencia SQL */
+.code {
+	background-color: rgba(255, 255, 255, 0.05);
+	border-radius: 10px 10px 10px 0;
+	box-shadow: 2.5px -2.5px 20px rgba(0, 0, 0, 0.25);
+	padding: 0.5rem 1rem 0.5rem 1rem;
+}
+.code > code {
+	font-family: 'Ubuntu Mono', Consolas, Monospace;
+	font-size: 18px;
+	line-height: 1.75;
+	letter-spacing: 1px;
+	color: #66CCE1;
+}
+.code > code > var {
+	color: #B2E64C;
+	font-style: oblique;
+	font-weight: lighter;
+}
+.code > code > .vars {
+	color: #E6DB7A;
+	background-color: rgba(255, 255, 255, 0.075);
+	border-radius: 0.25em;
+	padding: 2.5px 10px 2.5px 10px;
+	font-style: oblique;
+	font-weight: lighter;
+}
+/* ==================================================== */
+/* EJEMPLO FORMATO PARA ESCRIBIR COMANDO:;
+<div class="code">
+	<code>
+		comando, puede tener clase var o vars.
+    </code>
+</div>
+*/
+/* ==================================================== */
+/* Botón de explicación de comandos */
+.btn-exp {
+	font-family: "Ubuntu Mono", Consolas, Monospace;
+	color: #E6DB7A;
+	background-color: #272822;
+	letter-spacing: 1.5px;
+	border: none;
+	border-radius: 0;
+}
+.btn-exp:hover {
+	color: #E6DB7A;
+	background-color: rgba(255, 255, 255, 0.05);
+}
+.btn-exp:focus {
+	outline: 0;
+	box-shadow: none;
+}
+.card-body {
+	background: #272822;
+}
+dt {
+	font-family: "Ubuntu Mono", Consolas, Monospace;
+	font-size: 17px;
+	font-weight: lighter;
+	letter-spacing: 1.5px;
+	color: #FAFAFA;
+}
+dd {
+	font-size: 16px;
+	line-height: 1.6;
+	margin-left: 2em;
+	color: #C0C0C0;
+}
+/* ==================================================== */
+/* EJEMPLO BOTÓN EXPLICATIVO:
+<button class="btn btn-exp" type="button" data-toggle="collapse" data-target="#collapse">+ notas explicatorias</button>
+    <div class="collapse" id="collapse">
+        <div class="card card-body">
+            <dl>
+                <dt> comando </dt>
+                <dd> explicación comando </dd>
+             </dl>
+        </div>
+    </div>
+*/
+/* ==================================================== */
+/* palabras clave presentes en los párrafos */
+p > var, p > code > var {
+	color: #B2E64C;
+	font-family: "Ubuntu Mono", Consolas, Monospace;
+}
+p > code {
+	color: #66CCE1;
+	font-family: "Ubuntu Mono", Consolas, Monospace;
+	font-size: 21px;
+	letter-spacing: 1px;
+	background-color: rgba(255, 255, 255, 0.075);
+	border-radius: 0.25em;
+	padding: 0.3em;
+	margin: 0 5px 0 5px;
+}
+/* Bloque de código para ejemplificar comandos */
+pre {
+	font-family: 'Ubuntu Mono', Consolas, Monospace;
+	font-size: 17px;
+	color: #C0C0C0;
+	border: 1.5px solid rgba(255, 255, 255, 0.075);;
+	border-radius: 10px 10px 0 0;
+	padding: 1rem;
+	margin: 3rem 0 0 0;
+	box-shadow: 2.5px -2.5px 20px rgba(0, 0, 0, 0.25);
+}
+pre > code {
+	color: #E6DB7A;
+	font-family: 'Ubuntu Mono', Consolas, Monospace;
+}
+pre::-webkit-scrollbar {
+	height: 7px;
+}
+pre::-webkit-scrollbar-thumb {
+	background: #D3D3D3;
+	border-radius: 10px;
+}
+/* ==================================================== */
+/* EJEMPLO FORMATO PARA ESCRIBIR BLOQUE DE CÓDIGO SQL:
+<pre>
+mysql><code> comando </code>
+salida del comando
+...
+</pre>
+<p class="explain"> texto explicativo </p>
+*/
+/* ==================================================== */
+/* texto que explica el bloque de código SQL */
+p.explain {
+	font-family: 'Ubuntu Condensed', sans-serif;
+	color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.075);
+	margin-top: 0;
+	padding: 0.5rem 1rem 0.5rem 1rem;
+	border-radius: 0 0 10px 10px;
+}
+/* pie de página sencillo */
+footer, .footer {
+	color: #C0C0C0;
+	font-size: 18px;
+	letter-spacing: 2px;
+	padding: 25px 5px 25px 5px;
+	margin: 75px 0 0 0;
+}
+time {
+	font-family: 'Ubuntu Mono', Monospace;
+	font-size: 18px;
+	font-style: oblique;
+	letter-spacing: 2px;
+	color: #C0C0C0;
+	padding-left: 2rem;
+}
+.nota {
+	margin-left: 2rem;
+	padding: 2rem;
+	background-color: rgba(200, 200, 200, 0.1);
+	border-left: 2px solid white;
+}
+.nota > h4 {
+	color: tomato;
+	font-size: 20px;
+}
+.nota > p {
+	font-size: 17px;
+	color: #C0C0C0;
+	margin: 0;
+}

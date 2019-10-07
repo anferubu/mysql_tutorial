@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="es">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- autor y descripción de la página -->
+    <meta name="author" content="Andrés F. Ruiz B.">
+    <meta name="description" content="Manual básico para comenzar a trabajar con bases de datos en MySQL">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- personal CSS -->
+    <link rel="stylesheet" href="intro.css">
+    <!-- icono de pestaña -->
+    <link rel="shortcut icon" href="icon/anferubu_logo.ico">
+    <title>Manual MySQL | Tabla de contenido</title>
+  </head>
+
+  <body id="temario">
+
+    <!-- inicio cabecera del documento -->
+    <header>
+      <nav class="navbar navbar-expand-md navbar-light px-4">
+        <a id="logo" class="navbar-brand" href="#">
+          <img src="icon/anferubu_logo.png" width="50" height="50" alt="anferubu nation logo">
+        </a>
+      </nav>
+    </header>
+    <!-- fin cabecera del documento -->
+
+    <!-- inicio temario -->
+    <div class="container d-flex align-items-center">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="pl-3">Tabla de contenido</h1>
+        </div>
+        <div class="col-md-6">
+          <ol>
+            <li>
+              <a href="#uno" data-toggle="collapse">Definir una base de datos</a>
+              <div class="collapse" id="uno">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Crear una nueva base de datos</a></li>
+                    <li>
+                      <a href="#unouno" data-toggle="collapse">Conjunto de carácteres y colación</a>
+                      <div class="collapse" id="unouno">
+                        <div class="card card-body">
+                          <ul>
+                            <li><a href="" target="_blank">Codificaciones existentes en el servidor</a></li>
+                            <li><a href="" target="_blank">Codificación por defecto del servidor</a></li>
+                            <li><a href="" target="_blank">Codificación de una base de datos</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li><a href="" target="_blank">Comenzar a trabajar sobre una base de datos</a></li>
+                    <li><a href="" target="_blank">Eliminar una base de datos</a></li>
+                  </ul>                  
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#dos" data-toggle="collapse">Definir las tablas de una base de datos</a>
+              <div class="collapse" id="dos">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Ver las tablas de una base de datos</a></li>
+                    <li><a href="" target="_blank">Crear una tabla</a></li>
+                    <li><a href="" target="_blank">Ver la estructura de una tabla</a></li>
+                    <li><a href="" target="_blank">Ver cómo se creó una tabla</a></li>
+                    <li><a href="" target="_blank">Eliminar tabla</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#tres" data-toggle="collapse">Modificar la estructura de una tabla</a>
+              <div class="collapse" id="tres">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Renombrar una tabla</a></li>
+                    <li><a href="" target="_blank">Agregar una nueva columna</a></li>
+                    <li><a href="" target="_blank">Modificar la definición de una columna</a></li>
+                    <li><a href="" target="_blank">Eliminar una columna</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#cuatro" data-toggle="collapse">Motores de almacenamiento</a>
+              <div class="collapse" id="cuatro">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Diferencia entre MyISAM e InnoDB</a></li>
+                    <li><a href="" target="_blank">Ver motores de almacenamiento existenes en MySQL</a></li>
+                    <li><a href="" target="_blank">Ver el motor de almacenamiento por defecto del servidor</a></li>
+                    <li><a href="" target="_blank">Ver el motor de almacenamiento usado por las tablas de una base de datos</a></li>
+                    <li><a href="" target="_blank">Definir el motor de almacenamiento para una tabla</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#cinco" data-toggle="collapse">Agregar y eliminar registros</a>
+              <div class="collapse" id="cinco">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Introducir nuevos registros</a></li>
+                    <li><a href="" target="_blank">Reemplazar registros con el mismo identificador</a></li>
+                    <li><a href="" target="_blank">Actualizar registros</a></li>
+                    <li><a href="" target="_blank">Eliminar registros</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#seis" data-toggle="collapse">Índices</a>
+              <div class="collapse" id="seis">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Definición y tipos de índices</a></li>
+                    <li><a href="" target="_blank">Crear clave primaria</a></li>
+                    <li><a href="" target="_blank">Crear un índice único</a></li>
+                    <li><a href="" target="_blank">Crear un índice ordinario o múltiples</a></li>
+                    <li><a href="" target="_blank">Eliminar índices</a></li>
+                    <li><a href="" target="_blank">Clave foránea</a></li>
+                    <li><a href="" target="_blank">Optimizar tablas</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#siete" data-toggle="collapse">Tipos de datos</a>
+              <div class="collapse" id="siete">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Datos numéricos</a></li>
+                    <li><a href="" target="_blank">Datos alfanuméricos</a></li>
+                    <li><a href="" target="_blank">Datos de fecha y hora</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#ocho" data-toggle="collapse">Operadores</a>
+              <div class="collapse" id="ocho">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Operadores lógicos</a></li>
+                    <li><a href="" target="_blank">Operadores aritméticos</a></li>
+                    <li><a href="" target="_blank">Operadores de comparación</a></li>
+                    <li><a href="" target="_blank">Otros operadores de comparación</a></li>
+                    <li><a href="" target="_blank">Expresiones regulares</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#nueve" data-toggle="collapse">Funciones de MySQL</a>
+              <div class="collapse" id="nueve">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Funciones numéricas</a></li>
+                    <li><a href="" target="_blank">Funciones alfanuméricas</a></li>
+                    <li><a href="" target="_blank">Funciones de fecha y hora</a></li>
+                    <li><a href="" target="_blank">Funciones agregadas</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#diez" data-toggle="collapse">Consultas</a>
+              <div class="collapse" id="diez">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Consultar todos los campos de una tabla</a></li>
+                    <li><a href="" target="_blank">Una consulta básica</a></li>
+                    <li><a href="" target="_blank">Agrupar registros</a></li>
+                    <li><a href="" target="_blank">Ordenar registros</a></li>
+                    <li><a href="" target="_blank">Limitar el número de registros mostrados</a></li>
+                    <li><a href="" target="_blank">Consultar registros no duplicados</a></li>
+                    <li><a href="" target="_blank">Aplicar un nuevo encabezado a un campo consultado</a></li>
+                    <li><a href="" target="_blank">Consultas anidadas</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#once" data-toggle="collapse">Combinaciones entre tablas</a>
+              <div class="collapse" id="once">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Mostrar solo los registros que aparecen en ambas tablas</a></li>
+                    <li><a href="" target="_blank">Mostrar todos los registros de la tabla izquierda o derecha</a></li>
+                    <li><a href="" target="_blank">Mostrar todos los registros de ambas tablas</a></li>
+                    <li><a href="" target="_blank">Mostrar los registros que aparecen solo en la tabla de la izquierda o derecha</a></li>
+                    <li><a href="" target="_blank">Mostrar los registros que aparecen solo en una de las dos tablas</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="col-md-6">
+          <ol start="12">
+            <li>
+              <a href="#doce" data-toggle="collapse">Vistas</a>
+              <div class="collapse" id="doce">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Crear una vista</a></li>
+                    <li><a href="" target="_blank">Ver la estructura de una vista</a></li>
+                    <li><a href="" target="_blank">Modificar vista</a></li>
+                    <li><a href="" target="_blank">Eliminar vista</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li> 
+            <li>
+              <a href="#trece" data-toggle="collapse">Variables de uso local</a>
+              <div class="collapse" id="trece">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Variables de usuario de uso global</a></li>
+                    <li><a href="" target="_blank">Guardar una consulta en una variable</a></li>
+                    <li><a href="" target="_blank">Variables de uso local dentro de rutinas</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>  
+            <li>
+              <a href="#catorce" data-toggle="collapse">Disparadores <em>(triggers)</em></a>
+              <div class="collapse" id="catorce">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Crear un disparador</a></li>
+                    <li><a href="" target="_blank">Ver disparadores existentes</a></li>
+                    <li><a href="" target="_blank">Disparadores de múltiples acciones</a></li>
+                    <li><a href="" target="_blank">Eliminar un disparador</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#quince" data-toggle="collapse">Rutinas almacenadas</a>
+              <div class="collapse" id="quince">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Diferencia entre una función y un procedimiento almacenado</a></li>
+                    <li><a href="" target="_blank">Crear y ejecutar un procedimiento almacenado</a></li>
+                    <li><a href="" target="_blank">Crear y ejecutar una función de usuario</a></li>
+                    <li><a href="" target="_blank">Modificar procedimientos y funciones</a></li>
+                    <li><a href="" target="_blank">Eliminar un procedimiento o función</a></li>
+                    <li><a href="" target="_blank">Ver definición de una rutina almacenada</a></li>
+                    <li><a href="" target="_blank">Ver información relevante de una rutina almacenada</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="">Manejo de errores</a>
+            </li>
+            <li>
+              <a href="#diecisiete" data-toggle="collapse">Cursores</a>
+              <div class="collapse" id="diecisiete">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Declarar y abrir cursores</a></li>
+                    <li><a href="" target="_blank">Avanzar el puntero de un cursor</a></li>
+                    <li><a href="" target="_blank">Cerrar un cursor</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#dieciocho" data-toggle="collapse">Constructores de control de flujo</a>
+              <div class="collapse" id="dieciocho">
+                <div class="card card-body">
+                  <ul>
+                    <li>
+                      <a href="#dieciochouno" data-toggle="collapse">Sentencias condicionales</a>
+                      <div class="collapse" id="dieciochouno">
+                        <div class="card card-body">
+                          <ul>
+                            <li><a href="" target="_blank">Sentencia IF</a></li>
+                            <li><a href="" target="_blank">Sentencia CASE</a></li>
+                          </ul>                          
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="#dieciochodos" data-toggle="collapse">Sentencias repetitivas</a>
+                      <div class="collapse" id="dieciochodos">
+                        <div class="card card-body">
+                          <ul>
+                            <li><a href="" target="_blank">Sentencia LOOP</a></li>
+                            <li><a href="" target="_blank">Sentencia REPEAT</a></li>
+                            <li><a href="" target="_blank">Sentencia WHILE</a></li>
+                          </ul>                          
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#diecinueve" data-toggle="collapse">Funciones de control de flujo</a>
+              <div class="collapse" id="diecinueve">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Expresión CASE</a></li>
+                    <li><a href="" target="_blank">Función IF()</a></li>
+                    <li><a href="" target="_blank">Función IFNULL()</a></li>
+                    <li><a href="" target="_blank">Función NULLIF()</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#veinte" data-toggle="collapse">Gestión de usuarios</a>
+              <div class="collapse" id="veinte">
+                <div class="card card-body">
+                  <ul>
+                    <li><a href="" target="_blank">Ver usuarios de MySQL</a></li>
+                    <li><a href="" target="_blank">Crear un nuevo usuario</a></li>
+                    <li><a href="" target="_blank">Ver los permisos de un usuario</a></li>
+                    <li><a href="" target="_blank">Otorgar permisos a usuarios</a></li>
+                    <li><a href="" target="_blank">Quitar permisos a usuarios</a></li>
+                    <li><a href="" target="_blank">Modificar el nombre y contraseña de un usuario</a></li>
+                    <li><a href="" target="_blank">Eliminar un usuario</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#veintiuno" data-toggle="collapse">Importar y exportar datos</a>
+              <div class="collapse" id="veintiuno">
+                <div class="card card-body">
+                  <ul>
+                    <li>
+                      <a href="#veintiunouno" data-toggle="collapse">Importar datos a MySQL</a>
+                      <div class="collapse" id="veintiunouno">
+                        <div class="card card-body">
+                          <ul>
+                            <li><a href="" target="_blank">Importar registros a una tabla</a></li>
+                            <li><a href="" target="_blank">Importar un conjunto de instrucciones SQL</a></li>
+                            <li><a href="" target="_blank">Importar una base de datos</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="#veintiunodos" data-toggle="collapse">Exportar datos desde MySQL</a>
+                      <div class="collapse" id="veintiunodos">
+                        <div class="card card-body">
+                          <ul>
+                            <li><a href="" target="_blank">Exportar el contenido de una tabla</a></li>
+                            <li><a href="" target="_blank">Exportar una base de datos</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <!-- fin temario -->
+
+    <!--inicio pie de página del documento -->
+    <footer id="temariofooter" class="container-fluid">
+      <div class="row text-center">
+        <div class="col">
+          <span>2019 &copy; &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; anferubu &nbsp; nation</span>
+        </div>
+      </div>
+    </footer>
+    <!--fin pie de página del documento -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -50,7 +50,7 @@ a:hover {
 
 /* inicio estilos del temario */
 #temario {
-	background: url(icon/bg.png) fixed;
+	background-image: url(icon/bg.png);
 	background-size: cover;
 }
 #temario a {

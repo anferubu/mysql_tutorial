@@ -1,0 +1,384 @@
+/* inicio estilos generales */
+::selection {
+	color: slateblue;
+	background-color: lavender;
+}
+/* fin estilos generales */
+
+
+
+/* inicio estilos del encabezado */
+header {
+	font-family: Karla, sans-serif;
+	padding: 0 1rem 0 2em;
+}header .navbar-brand:hover {
+	transform: scale(1.1) rotate(1turn);
+	transition-duration: 0.5s;
+}header .nav-link:link {
+	color: #B2B2B2;
+	font-size: 1.25rem;
+	text-decoration: none;
+}header .nav-link:hover {
+	color: #2D2D2D;
+	transition-duration: 0.25s;
+}
+/* fin estilos del encabezado */
+
+
+
+/* inicio estilos del título principal */
+#titulo_principal {
+	position: relative;
+}h1 {
+	color: #2D2D2D;
+	font-family: Oswald, sans-serif;
+	font-size: 6rem;
+	font-weight: bold;
+	padding-top: 5rem; 
+}time {
+	font-family: 'Source Code Pro', monospace;
+}#time {
+	border-top: 1px solid #C0C0C0;
+	border-bottom: 1px solid #C0C0C0;
+	margin: 1rem 0 1rem 0;
+	padding: 0.25rem 0 0.25rem 1rem;
+}#time_icon {
+	color: #C0C0C0;
+	font-size: 1.5rem;
+	padding-right: 1rem;
+}@media only screen and (min-width: 768px) {
+	#bg_title {
+	height: 250px;
+	width: 250px;
+	background-color: rgba(255, 230, 93, 0.5);
+	position: absolute;
+	left: 400px;
+	top: 25px;
+	transform: rotate(0.2turn);
+	}
+}@media only screen and (max-width: 768px) {
+	#bg_title {
+	height: 150px;
+	width: 150px;
+	background-color: rgba(255, 230, 93, 0.5);
+	position: absolute;
+	left: 250px;
+	top: 50px;
+	transform: rotate(0.2turn);
+	}
+}
+/* fin estilos del título principal */
+
+
+
+/* ------------------------------- */
+/* inicio estilos cuerpo principal */
+/* ------------------------------- */
+
+main {
+	margin-top: 5rem;
+}
+
+/* inicio estilos columna principal */
+
+/* inicio estilos resumen */
+#resumen > p {
+	font-family: Karla, sans-serif;
+	font-size: 1.25rem;
+	line-height: 1.6;
+	text-align: justify;
+	color: #2D2D2D;
+	padding-bottom: 2.5rem;
+	border-bottom: 1px solid #C0C0C0;
+}
+/* fin estilos resumen */
+
+/* inicio estilos índice del artículo */
+#article_index {
+	padding-bottom: 2.5rem;
+	border-bottom: 1px solid #C0C0C0;
+}#article_index h4 {
+	font-family: Oswald, sans-serif;
+	font-size: 1.6rem;
+	margin-top: 3rem;
+	margin-bottom: 2rem;
+}#article_index a {
+	font-family: Karla, sans-serif;
+	font-size: 1.125rem;
+	line-height: 1.8;
+	color: #2D2D2D;
+	text-decoration: none;
+}#article_index a:hover {
+	font-weight: bold;
+}#article_index .card {
+	border: 0;
+	background-color: transparent;
+}
+/* fin estilos índice del artículo */
+
+/* inicio estilos artículo */
+#article h2 {
+	font-family: Oswald, sans-serif;
+	font-size: 4rem;
+	color: #2D2D2D;
+	padding-bottom: 2rem;
+	padding-top: 2.5rem;
+}#article h3 {
+	font-family: Oswald, sans-serif;
+	font-size: 2rem;
+	color: #2D2D2D;
+	padding-bottom: 1.5rem;
+}#article h4 {
+	font-family: Oswald, sans-serif;
+	font-size: 1.5rem;
+	color: #2D2D2D;
+	padding-bottom: 1rem;
+}#article p {
+	font-family: Karla, sans-serif;
+	font-size: 1.125rem;
+	color: #2D2D2D;
+	line-height: 1.8;
+	text-align: justify;
+	margin-bottom: 2rem;
+}#article hr {
+	width: 80%;
+}#article a:link {
+	color: #1E90FF;
+	text-decoration: none;
+}#article a:visited {
+	color: #AA7DFC;
+}
+#article .code {
+	padding: 0.5rem 1rem 0.5rem 1rem;
+	background-color: rgba(230, 230, 250, 0.5);
+}#article code {
+	font-family: 'Source Code Pro', 'Ubuntu Mono', Consolas, monospace;
+	font-size: 1rem;
+	line-height: 1.8;
+	letter-spacing: 1px;
+	color: #0000CD;
+}#article code > var {
+	font-style: oblique;
+	font-weight: lighter;
+	color: crimson;
+}
+#article .btn-exp {
+	font-family: 'Source Code Pro', 'Ubuntu Mono', Consolas, Monospace;
+	color: #2D2D2D;
+	letter-spacing: 1.5px;
+	border: none;
+}#article .btn-exp:hover {
+	color: #C0C0C0;
+}#article .btn-exp:focus {
+	outline: 0;
+	box-shadow: none;
+}#article .card-body {
+	border: none;
+}#article dt {
+	font-family: 'Source Code Pro', 'Ubuntu Mono', Consolas, Monospace;
+	font-size: 1.0625rem;
+	font-weight: lighter;
+	letter-spacing: 1.5px;
+	color: #242424;
+}#article dd {
+	font-size: 16px;
+	line-height: 1.6;
+	margin-left: 2em;
+	margin-bottom: 1.5rem;
+	color: rgba(105, 105, 105, 0.85);
+}
+#article p > code {
+	font-family: 'Source Code Pro', 'Ubuntu Mono', Consolas, Monospace;
+	font-size: 1.125rem;
+	color: #0000CD;
+	background-color: rgba(230, 230, 250, 0.5);
+	padding: 0.5rem 0.75rem 0.5rem 0.75rem ;
+	border-radius: 20px;
+}
+#article pre {
+	font-family: 'Source Code Pro', 'Ubuntu Mono', Consolas, Monospace;
+	font-size: 1rem;
+	color: #C0C0C0;
+	background-color: #2D2D2D;
+	border: 1.5px solid rgba(255, 255, 255, 0.075);;
+	border-radius: 10px 10px 0 0;
+	padding: 1rem 1.5rem 1rem 1.5rem;
+	margin: 3rem 0 0 0;
+}#article pre > code {
+	color: #E6DB7A;
+	font-family: 'Source Code Pro', 'Ubuntu Mono', Consolas, Monospace;
+}
+#article p.explain {
+	font-family: Karla, sans-serif;
+	font-size: 1rem;
+	color: #2D2D2D;
+	background-color: rgba(0, 0, 0, 0.075);
+	margin-top: 0;
+	margin-bottom: 5rem;
+	padding: 0.5rem 1rem 0.5rem 1rem;
+	border-radius: 0 0 10px 10px;
+}
+#article .nota {
+	margin-left: 2rem;
+	margin-bottom: 4rem;
+	padding: 2rem;
+	background-color: #FFD4D4;
+	border-radius: 10px;
+}#article .nota > h4 {
+	color: #2D2D2D;
+	font-size: 1.2rem;
+}#article .nota > p {
+	font-size: 1rem;
+	color: #2D2D2D;
+	margin-bottom: 0;
+}
+/* fin estilos artículo */
+
+
+/* inicio estilos redes sociales */
+#social_networks {
+	margin-top: 2rem;
+	margin-bottom: 5rem;
+}#social_networks > p {
+	font-family: Karla, sans-serif;
+	margin-bottom: 0.75rem;
+	font-weight: bold;
+	font-size: 1rem;
+}#social_buttons a {
+	text-decoration: none;
+}#social_buttons i {
+	font-size: 2.5rem;
+	margin-right: 1.25rem;
+}#facebook {
+	color: #3B5998;
+}#twitter {
+	color: #00ACEE;
+}#linkedin {
+	color: #0E76A8;
+}#social_buttons i:hover {
+	color: #2D2D2D;
+	transition-duration: 0.2s;
+	transform: rotate(-0.05turn);
+}
+/* fin estilos redes sociales */
+
+
+
+
+/* inicio estilos acerca del autor */
+#about_author {
+	padding: 1rem;
+	margin: 1rem 1rem 5rem 1rem;
+	border: 1px solid #C0C0C0;
+	border-radius: 10px;
+	position: relative;
+}#name_author > h4 {
+	font-family: Oswald, sans-serif;
+	font-size: 1.55rem;
+}#my_name {
+	font-family: 'Source Code Pro', monospace;
+	font-size: 1.1rem;
+	color: dimgray;
+}#github {
+	color: #2D2D2D;
+}#github:hover {
+	transform: scale(1.25);
+	transition-duration: 0.2s;
+}#description_author {
+	padding: 1rem 0 0 0;
+}#description_author p {
+	font-family: Karla, sans-serif;
+	font-size: 1rem;
+	color: dimgray;
+	margin-bottom: 0;
+}#bg_author {
+	height: 100%;
+	width: 100px;
+	background-color: rgba(255, 230, 93, 0.5);
+	position: absolute;
+	left: 70%;
+	top: 0;
+}
+/* fin estilos acerca del autor*/
+
+
+
+/* inicio estilos paginación */
+#paginación {
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+}#paginación .page-link {
+	font-family: Karla, sans-serif;
+	font-size: 1rem;
+	color: #2D2D2D;
+	background-color: transparent;
+	border: 1px solid #C0C0C0;
+}#paginación a.page-link:hover {
+	color: #6A5ACD;
+	background-color: rgba(200, 200, 200, 0.25);
+}#paginación .active > .page-link {
+	color: #FFFFFF;
+}#paginación .disabled > a {
+	color: #C0C0C0;
+}#paginación .active {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+/* fin estilos paginación */
+
+/* fin estilos columna principal */
+
+
+
+
+/* inicio estilos tabla de contenido */
+iframe {
+	height: 90%;
+	width: 100%;
+	border: 0;
+}::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}::-webkit-scrollbar-thumb {
+	background-color: dimgray;
+	border-radius: 5px;
+}::-webkit-scrollbar-track {
+	background-color: #C0C0C0;
+}#content_table h4 {
+	font-family: Oswald, sans-serif;
+	font-size: 1.6rem;
+	padding-top: 1rem;
+	padding-left: 2.5rem;
+}#temario a {
+	color: #2D2D2D;
+	font-size: 1rem;
+	font-family: Karla, sans-serif;
+	line-height: 2rem;
+}#temario a:hover {
+	text-decoration: none;
+	font-weight: bold;
+}#temario .card {
+	border: 0;
+	background-color: transparent;
+}#temario ul li {
+	list-style-type: disc;
+}@media only screen and (max-width: 992px) {
+	#content_table {
+		visibility: hidden;
+	}
+}
+/* fin estilos tabla de contenido */
+
+/* ---------------------------- */
+/* fin estilos cuerpo principal */
+/* ---------------------------- */
+
+
+
+/* inicio estilos pie de página */
+footer {
+	color: #C0C0C0;
+	font-size: 1.125rem;
+	letter-spacing: 0.125rem;
+	padding-bottom: 0.5rem;
+}
+/* fin estilos pie de página */
